@@ -10,29 +10,34 @@ export default class Directory extends React.Component {
       sections: [{
         id: 1,
         title: 'HATS',
-        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png'
+        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        linkUrl: 'hats'
       },
       {
         id: 2,
         title: 'JACKETS',
-        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png'
+        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+        linkUrl: 'jackets'
       },
       {
         id: 3,
         title: 'SNEAKERS',
-        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png'
+        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+        linkUrl: 'sneakers'
       },
       {
         id: 4,
         title: 'WOMENS',
         imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-        size: 'large'
+        size: 'large',
+        linkUrl: 'womens'
       },
       {
         id: 5,
         title: 'MENS',
         imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-        size: 'large'
+        size: 'large',
+        linkUrl: 'mens'
       }]
     }
 
@@ -40,8 +45,8 @@ export default class Directory extends React.Component {
 
   render() {
     return (<div className='directory-menu'>
-      {this.state.sections.map(({ title, id, imageUrl, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {this.state.sections.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>)
   }

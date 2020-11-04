@@ -1,0 +1,2 @@
+[1103/122037.935:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1103/181823.653:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Comrade\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\e710eec1-f29b-4319-a266-1d22fd6fad1a: The system cannot find the path specified. (0x3)
