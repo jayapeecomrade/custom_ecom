@@ -2,6 +2,7 @@ import './App.css';
 import HomePage from './pages/home/homepage.component';
 import { Switch, Route } from 'react-router-dom';
 import ShopPage from './pages/shop/shoppage.component';
+import Header from './components/header/header.component';
 
 const HatsPage = () => {
   return (
@@ -31,12 +32,13 @@ const TopicDetail = (props) => {
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
         <Route exact path='/hats' component={HatsPage} />
-        <Route exact path='/topics' component={TopicsList} />
+        <Route exact path='/contact' component={ShopPage} />
         <Route exact path='/topics/:topicId' component={TopicDetail} />
       </Switch>
     </div>
