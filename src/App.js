@@ -70,9 +70,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => {
+const mapStateToProps = state => {
   return {
-    currentUser: user.currentUser
+    currentUser: state.user.currentUser
   }
 }
 
