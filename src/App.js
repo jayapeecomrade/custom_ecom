@@ -9,6 +9,7 @@ import Header from './components/header/header.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user-actions';
 import { connect } from 'react-redux';
+import { createBrowserHistory } from 'history';
 
 const HatsPage = () => {
   return (
@@ -25,6 +26,10 @@ const TopicDetail = (props) => {
     </div>
   )
 }
+
+export const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL
+});
 
 class App extends React.Component {
 
@@ -54,6 +59,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('render in app');
     return (
       <div>
         <Header />
@@ -71,6 +77,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log('map state to props in app');
   return {
     currentUser: state.user.currentUser
   }

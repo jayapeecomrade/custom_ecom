@@ -6,8 +6,9 @@ import { auth } from './../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import CartIcon from './../cart-icon/cart-icon.component';
 import CartDropdown from './../cart-dropdown/cart-dropdown.component';
-const Header = (props) => (
-  <div className='header'>
+const Header = (props) => {
+  console.log('render in header');
+  return (<div className='header'>
     <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
@@ -22,10 +23,11 @@ const Header = (props) => (
     {
       props.hidden ? null : <CartDropdown />
     }
-  </div>
-)
+  </div>)
+}
 
 const mapStateToProps = state => {
+  console.log('map state to props in header');
   return {
     currentUser: state.user.currentUser,
     hidden: state.cart.hidden
